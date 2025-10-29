@@ -29,8 +29,30 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
+
+# models:
+#   oms_dbt_proj:
+#     # Config indicated by + and applies to all files under models/staging/ (local)
+#     # staging: # Hướng tới staging trong local
+#       # +materialized: view # Setup a dbt to set that it generalize view
+#       # +schema: staging # Create a custom schema named: staging in snowflake. Mặc định nếu không set sẽ là PUBLIC
+#     # example:
+#       +materialized: view
+
+# By default materialized is set by default by dbt
+# If we want to set manually, we need to hardcore by set it in dbt_project.yml
 models:
+  +trasient: False
   oms_dbt_proj:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    customers_stg:
+      schema: L2_PROCESSING
+    orders_stg:
+      schema: L2_PROCESSING
+    orderItems_stg:
+      schema: L2_PROCESSING
+    customerRevenue:
+      materialized: table
+    orders_fact:
+      schema: L2_PROCESSING
+      materialized: table
