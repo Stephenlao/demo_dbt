@@ -49,9 +49,9 @@ models:
       schema: L2_PROCESSING
     orders_stg:
       schema: L2_PROCESSING
-    orderItems_stg:
+    orderitems_stg:
       schema: L2_PROCESSING
-    customerRevenue:
+    customerrevenue:
       materialized: table
     orders_fact:
       schema: L2_PROCESSING

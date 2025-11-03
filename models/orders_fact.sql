@@ -12,7 +12,7 @@ SELECT
 FROM
     {{ ref('orders_stg') }} O
 JOIN
-    {{ ref('orderItems_stg') }} OI ON O.OrderID = OI.OrderID
+    {{ ref('orderitems_stg') }} OI ON O.OrderID = OI.OrderID
 
 GROUP BY
     O.OrderID,
