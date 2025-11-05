@@ -30,3 +30,15 @@ sources:
         identifier: suppliers
       - name: products
         identifier: products
+
+  - name: training
+    database: SLEEKMART_OMS
+    schema: TRAINING
+
+    tables:
+      - name: sales_india
+        identifier: SALES_INDIA
+      - name: sales_uk
+        identifier: SALES_UK
+      - name: sales_us
+        identifier: SALES_US
